@@ -1,0 +1,27 @@
+name: CI_PR
+on: 
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+  pull_request:
+    
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Greet user
+        run: echo welcome to Actions
+  test:
+    name: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: test user
+        run: echo welcome to test action
+  Deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy user
+        run: echo welcome to deploy action
+  
